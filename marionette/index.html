@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base target="_blank">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <title>MarioNette: Self-Supervised Sprite Learning</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23662412-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-23662412-4');
+    </script>
+  </head>
+  <body class="bg-light">
+      <div class="container container-small pb-5">
+          <div class="row pt-4 pb-3 justify-content-center">
+              <div class="col-12 pt-1">
+                  <h2 class="text-center">MarioNette: Self-Supervised Sprite Learning</h2>
+                  <div class="text-center font-weight-normal h5">
+                      <a class="pr-5" href="https://dmsm.github.io">Dmitriy Smirnov<sup>1</sup></a>
+                      <a class="pr-5" href="http://mgharbi.com">Michaël Gharbi<sup>2</sup></a>
+                      <a class="pr-5" href="https://techmatt.github.io">Matthew Fisher<sup>2</sup></a>
+                      <a href="http://vitorguizilini.weebly.com">Vitor Guizilini<sup>3</sup></a><br>
+                      <a class="pr-5" href="https://people.eecs.berkeley.edu/~efros/">Alexei A. Efros<sup>4</sup></a>
+                      <a href="https://people.csail.mit.edu/jsolomon/">Justin Solomon<sup>1</sup></a>
+                   </div>
+                  <div class="text-center font-weight-normal h6 pt-2">
+                      <span class="pr-5"><sup>1</sup>Massachusetts Institute of Technology</span>
+                      <span class="pr-5"><sup>2</sup>Adobe Research</span>
+                      <span class="pr-5"><sup>3</sup>Toyota Research Institute</span>
+                      <span><sup>4</sup>UC Berkeley</span>
+                  </div>
+                  <div class="text-center font-weight-normal h5 pt-2">
+                      <a href="https://neurips.cc/Conferences/2021">NeurIPS 2021</a>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12 text-center">
+                  <img src="im.png" alt="MarioNette: Self-Supervised Sprite Learning" class="rounded img-fluid">
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Abstract</h4>
+                  <p class="text-justify">Artists and video game designers often construct 2D animations using libraries of sprites&mdash;textured patches of objects and characters. We propose a deep learning approach that decomposes sprite-based video animations into a disentangled representation of recurring graphic elements in a self-supervised manner. By jointly learning a dictionary of possibly transparent patches and training a network that places them onto a canvas, we deconstruct sprite-based content into a sparse, consistent, and explicit representation that can be easily used in downstream tasks, like editing or analysis. Our framework offers a promising approach for discovering recurring visual patterns in image collections without supervision.</p>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Method</h4>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="text-center mb-2">
+                      <img src="pipeline.png" alt="Pipeline" class="rounded" style="width:100%;">
+                  </div>
+                  <p class="text-justify">An overview of our method. We jointly learn a sprite dictionary, represented as a set of trainable latent codes decoded by a generator, as well as an encoder network that embeds an input frame into a grid of latent codes, or anchors. Comparing anchor embeddings to dictionary codes lets us assign a sprite to each grid cell. Our encoder also outputs an on/off switch probability per anchor to turn sprites on and off. After compositing, we obtain a reconstruction of the input. Our self-supervised training optimizes a reconstruction loss.</p>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4 class="mb-3">Video</h4>
+              </div>
+          </div>
+          <div class="row justify-content-md-center">
+              <div class="col-11">
+                  <div class="embed-responsive embed-responsive-16by9">
+                      <iframe width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/KMrdh8RQCJk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Paper</h4>
+              </div>
+          </div>
+          <div class="row mt-2 mb-5">
+              <div class="col-2">
+                  <a href="https://openreview.net/forum?id=3zP6RrQtNa"><img src="paper-thumb.png" alt="Paper" class="layered-paper-big" style="width:80%"></a>
+              </div>
+              <div class="col-10">
+                  <p>
+                  D. Smirnov, M. Gharbi, M. Fisher, V. Guizilini, A. A. Efros, J. Solomon<br>
+                  <b>MarioNette: Self-Supervised Sprite Learning</b><br>
+                  Conference on Neural Information Processing Systems (NeurIPS) 2021, online<br>
+                  <a href="https://openreview.net/forum?id=3zP6RrQtNa">OpenReview</a> | <a href="#" data-placement="bottom"  data-popover-content="#marionette-bib" data-toggle="popover">BibTeX</a>
+                  </p>
+              </div>
+              <div id="marionette-bib" class="d-none">
+                  <div class="popover-body">
+                      <pre>@inproceedings{smirnov2021marionette,
+  title={{MarioNette}: Self-Supervised Sprite Learning},
+  author={Smirnov, Dmitriy and Gharbi, Micha\"el and Fisher, Matthew and Guizilini, Vitor and Efros, Alexei A. and Solomon, Justin},
+  year={2021},
+  booktitle={Advances in Neural Information Processing Systems}
+}</pre>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Poster</h4>
+                  <div class="text-center">
+                      <div>
+                          <iframe src="poster.pdf" height="700" style="width:100%;"></iframe>
+                      </div>
+                      <a href="poster.pdf">pdf</a> [4M]
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4 class="mb-2">Code</h4>
+                  <a href="https://github.com/dmsm/MarioNette"><i class="fab fa-github fa-lg"></i> GitHub</a>
+                  <div class="mt-2">
+                  <a class="github-button" href="https://github.com/dmsm/MarioNette" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/MarioNette on GitHub">Star</a>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Acknowledgements</h4>
+                  <p class="text-justify">The MIT Geometric Data Processing group acknowledges the generous support of Army Research Office grants W911NF2010168 and W911NF2110293, of Air Force Office of Scientific Research award FA9550-19-1-031, of National Science Foundation grants IIS-1838071 and CHS-1955697, from the CSAIL Systems that Learn program, from the MIT-IBM Watson AI Laboratory, from the Toyota-CSAIL Joint Research Center, from a gift from Adobe Systems, from an MIT.nano Immersion Lab/NCSOFT Gaming Program seed grant, and from the Skoltech-MIT Next Generation Program. This work was also supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1122374.</p>
+              </div>
+          </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/61636ac538.js" crossorigin="anonymous"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        $(function () {
+          $('[data-toggle="popover"]').click(function(e) {
+            e.preventDefault();
+          }).popover({ 
+              container : 'body',
+              html : true,
+              content: function() {
+              var content = $(this).attr("data-popover-content");
+              return $(content).children(".popover-body").html();
+              }
+          });
+    });
+    </script>
+  </body>
+</html>

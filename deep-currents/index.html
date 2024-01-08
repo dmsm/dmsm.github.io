@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base target="_blank">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <title>DeepCurrents: Learning Implicit Representations of Shapes with Boundaries</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23662412-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-23662412-4');
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="bg-light">
+      <div class="container container-small pb-5">
+          <div class="row pt-4 pb-3 justify-content-center">
+              <div class="col-12 pt-1">
+                  <h2 class="text-center">DeepCurrents:<br>Learning Implicit Representations of Shapes with Boundaries</h2>
+                  <div class="text-center font-weight-normal h5">
+                      <a class="pr-4" href="https://people.csail.mit.edu/drp/">David Palmer*<sup>1</sup></a>
+                      <a class="pr-4" href="https://dmsm.github.io">Dmitriy Smirnov*<sup>1</sup></a>
+                      <a class="pr-4" href="https://evastgh.github.io">Stephanie Wang<sup>2</sup></a>
+                      <a class="pr-4" href="https://cseweb.ucsd.edu/~alchern/">Albert Chern<sup>2</sup></a>
+                      <a href="https://people.csail.mit.edu/jsolomon/">Justin Solomon<sup>1</sup></a>
+                   </div>
+                  <div class="text-center font-weight-normal h6 pt-2">
+                      <span class="pr-5"><sup>1</sup>Massachusetts Institute of Technology</span>
+                      <span><sup>2</sup>UC San Diego</span>
+                  </div>
+                  <div class="text-center font-weight-normal h7">
+                      * denotes equal contribution
+                  </div>
+                  <div class="text-center font-weight-normal h5 pt-2">
+                      <a href="http://cvpr2022.thecvf.com">CVPR 2022</a>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <img src="im.png" alt="DeepCurrents: Learning Implicit Representations of Shapes with Boundaries" class="rounded img-fluid">
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Abstract</h4>
+                  <p class="text-justify">Recent techniques have been successful in reconstructing surfaces as level sets of learned functions (such as signed distance fields) parameterized by deep neural networks. Many of these methods, however, learn only closed surfaces and are unable to reconstruct shapes with boundary curves. We propose a hybrid shape representation that combines explicit boundary curves with implicit learned interiors. Using machinery from geometric measure theory, we parameterize currents using deep networks and use stochastic gradient descent to solve a minimal surface problem. By modifying the metric according to target geometry coming, e.g., from a mesh or point cloud, we can use this approach to represent arbitrary surfaces, learning implicitly defined shapes with explicitly defined boundary curves. We further demonstrate learning families of shapes jointly parameterized by boundary curves and latent codes.</p>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Method</h4>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-7">
+                  <div class="text-center mb-2">
+                      <img src="2d.png" alt="Pipeline" class="rounded" style="width:80%;">
+                  </div>
+                  <p class="text-justify">We learn a geometric current parameterized by a deep network \(f\). Minimizing the mass norm \(\|df + \alpha\|_1\) under the Euclidean metric in two dimensions yields a line segment connecting the two boundary points (b). With our custom data-dependent background metric, we can reconstruct the semicircle as a current (e). \(\alpha\) is shown as a vector field (a) and the custom metric is depicted by oriented ellipsoids (d, not to scale). Corresponding functions \(f\) are shown at right (c and f).</p>
+              </div>
+              <div class="col-5">
+                  <div class="text-center mb-2">
+                      <img src="architecture.png" alt="Architecture" class="rounded" style="width:100%;">
+                  </div>
+                  <p class="text-justify">An overview of our network architectures for minimal surface optimization and single surface reconstruction (top) as well as shape space learning (bottom). An input point \(x\) is first encoded using random Fourier features. These features are then optionally concatenated with latent codes corresponding to shape identity and boundary and finally decoded to a scalar output.</p>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Results</h4>
+              </div>
+          </div>
+          <div class="row text-center">
+              <div class="col-12 text-center">
+                  <h5>Minimal Surface Convergence</h5>
+              </div>
+          </div>
+          <div class="row mb-2 text-center">
+              <div class="col-4 text-center">
+                  <img src="results/trefoil.gif" class="mb-2" alt="Trefoil Knot" style="width: 100%;">
+                  <p>Trefoil Knot</p>
+              </div>
+              <div class="col-4 text-center">
+                  <img src="results/hopf.gif" class="mb-2" alt="Hopf Links" style="width: 100%;">
+                  <p>Hopf Link</p>
+              </div>
+              <div class="col-4 text-center">
+                  <img src="results/borromean.gif" class="mb-2" alt="Borromean Rings" style="width: 100%;">
+                  <p>Borromean Rings</p>
+              </div>
+          </div>
+          <div class="row text-center">
+              <div class="col-12 text-center">
+                  <h5>Learned Surface Interpolation</h5>
+              </div>
+          </div>
+          <div class="row mb-2 text-center">
+              <div class="col-3 text-center">
+                  <img src="results/heads_latent.gif" class="mb-2" alt="Heads Latent Interpolation" style="width: 100%;">
+                  <p>Heads (latent)</p>
+              </div>
+              <div class="col-3 text-center">
+                  <img src="results/hands_latent.gif" class="mb-2" alt="Hands Latent Interpolation" style="width: 100%;">
+                  <p>Hands (latent)</p>
+              </div>
+              <div class="col-3 text-center">
+                  <img src="results/heads_bdry.gif" class="mb-2" alt="Heads Boundary Interpolation" style="width: 100%;">
+                  <p>Heads (boundary)</p>
+              </div>
+              <div class="col-3 text-center">
+                  <img src="results/hands_bdry.gif" class="mb-2" alt="Borromean Rings" style="width: 100%;">
+                  <p>Hands (boundary)</p>
+              </div>
+          </div>
+          <div class="row text-center">
+              <div class="col-12 text-center">
+                  <h5>Surface Reconstruction</h5>
+                  <img src="results/reconstruction.png" class="mb-2" alt="Surface Reconstruction" style="width: 100%;">
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4 class="mb-3">Video</h4>
+              </div>
+          </div>
+          <div class="row justify-content-md-center">
+              <div class="col-11">
+                  <div class="embed-responsive embed-responsive-16by9">
+                      <iframe width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/OhJC3rtzeoU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Paper</h4>
+              </div>
+          </div>
+          <div class="row mt-2 mb-5">
+              <div class="col-2">
+                  <a href="https://arxiv.org/abs/2111.09383"><img src="paper-thumb.png" alt="Paper" class="layered-paper-big" style="width:80%"></a>
+              </div>
+              <div class="col-10">
+                  <p>
+                  D. Palmer*, D. Smirnov*, S. Wang, A. Chern, J. Solomon<br>
+                  <b>DeepCurrents: Learning Implicit Representations of Shapes with Boundaries</b><br>
+                  Conference on Computer Vision and Pattern Recognition (CVPR), 2022<br>
+                  <a href="https://arxiv.org/abs/2111.09383">arXiv</a> | <a href="#" data-placement="bottom"  data-popover-content="#deepcurrents-bib" data-toggle="popover">BibTeX</a>
+                  </p>
+              </div>
+              <div id="deepcurrents-bib" class="d-none">
+                  <div class="popover-body">
+                      <pre>@inproceedings{palmer2022deepcurrents,
+  title={{DeepCurrents}: Learning Implicit Representations of Shapes with Boundaries},
+  author={Palmer, David and Smirnov, Dmitriy and Wang, Stephanie and Chern, Albert and Solomon, Justin},
+  year={2022},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}
+}</pre>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4 class="mb-2">Code</h4>
+                  <a href="https://github.com/dmsm/DeepCurrents"><i class="fab fa-github fa-lg"></i> GitHub</a>
+                  <div class="mt-2">
+                  <a class="github-button" href="https://github.com/dmsm/DeepCurrents" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/DeepCurrents on GitHub">Star</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/61636ac538.js" crossorigin="anonymous"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        $(function () {
+          $('[data-toggle="popover"]').click(function(e) {
+            e.preventDefault();
+          }).popover({ 
+              container : 'body',
+              html : true,
+              content: function() {
+              var content = $(this).attr("data-popover-content");
+              return $(content).children(".popover-body").html();
+              }
+          });
+    });
+    </script>
+  </body>
+</html>

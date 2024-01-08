@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base target="_blank">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@7/dist/styles.css" />
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <title>Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23662412-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-23662412-4');
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/61636ac538.js" crossorigin="anonymous"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        $(function () {
+          $('[data-toggle="popover"]').click(function(e) {
+            e.preventDefault();
+          }).popover({ 
+              container : 'body',
+              html : true,
+              content: function() {
+              var content = $(this).attr("data-popover-content");
+              return $(content).children(".popover-body").html();
+              }
+          });
+          $("#btn-closeup :input").change(function(){
+              switch(this.id) {
+                  case "matte":
+                      $("#img-closeup-second").attr("src", "closeup-matte.webp");
+                      break;
+                  case "composite":
+                      $("#img-closeup-second").attr("src", "closeup-comp.webp");
+                      break;
+              }
+          });
+          $("#btn-fullcolor-matte :input").change(function(){
+              console.log(this.id);
+              switch(this.id) {
+                  case "monochrome":
+                      $("#img-fullcolor-matte-first").attr("src", "monochrome-holdout.webp");
+                      $("#img-fullcolor-matte-second").attr("src", "monochrome-comp.webp");
+                      break;
+                  case "fullcolor":
+                      $("#img-fullcolor-matte-first").attr("src", "fullcolor-holdout.webp");
+                      $("#img-fullcolor-matte-second").attr("src", "fullcolor-comp.webp");
+                      break;
+              }
+          });
+    });
+    </script>
+    <script defer src="https://unpkg.com/img-comparison-slider@7/dist/index.js" ></script>
+  </head>
+  <body class="bg-light">
+      <div class="container container-small pb-5">
+          <div class="row pt-4 pb-3 justify-content-center">
+              <div class="col-12 pt-1">
+                  <h2 class="text-center">Magenta Green Screen:<br>Spectrally Multiplexed Alpha Matting with Deep Colorization</h2>
+                  <div class="text-center font-weight-normal h5">
+                      <a class="pr-4" href="https://dmsm.github.io">Dmitriy Smirnov<sup>1</sup></a>
+                      <a class="pr-4" href="http://chloelegendre.com">Chloe LeGendre<sup>2</sup></a>
+                      <a class="pr-4" href="http://yu.xueming.org">Xueming Yu<sup>2</sup></a>
+                      <a href="https://www.pauldebevec.com">Paul Debevec<sup>2</sup></a>
+                   </div>
+                  <div class="text-center font-weight-normal h6 pt-2">
+                      <span class="pr-5"><sup>1</sup>Netflix</span>
+                      <span><sup>2</sup>Netflix Eyeline Studios</span>
+                  </div>
+                  <div class="text-center font-weight-normal h5 pt-2">
+                      <a href="https://dp2023.digiproconf.org/">DigiPro 2023</a>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <img src="im.webp" alt="Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization" class="rounded img-fluid">
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Abstract</h4>
+                  <p class="text-justify">We introduce <em>Magenta Green Screen</em>, a novel machine–learning enabled matting technique for recording the color image of a foreground actor with a simultaneous high-quality alpha channel without requiring a special camera or manual keying techniques.  We record the actor on a green background, but light them with only red and blue foreground lighting.  In this configuration, the green channel shows the actor silhouetted against a bright, even background, which can be used directly as a holdout matte, the inverse of the actor's <em>alpha channel</em>.  We then restore the green channel of the foreground using a machine learning colorization technique.  We train the colorization model with an example sequence of the actor lit by white lighting, yielding convincing and temporally stable colorization results.  We further show that time-multiplexing the lighting between magenta green screen and green magenta screen allows the technique to be practiced under what appears to be mostly normal lighting.  We demonstrate that our technique yields high-quality compositing results when implemented on a modern LED virtual production stage.  The high-quality alpha channel data obtainable with our technique can provide significantly higher quality training data for natural image matting algorithms to support future ML matting research.</p>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Method</h4>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <p class="text-justify">
+                    Our method honors Alvy Ray Smith's assertion that the "transparency of an image is as fundamental as its color" and uses one of the camera's three color channels (usually green) to measure the alpha channel.  We then use example-based image colorization to restore the green channel of the foreground element.
+                  </p>
+              </div>
+          </div>
+          <div class="row mb-2">
+              <div class="col-6">
+                  <div class="text-center mb-2">
+                      <img src="setup.webp" alt="Setup" class="rounded" style="width:100%;">
+                  </div>
+              </div>
+              <div class="col-6">
+                  <div class="text-center mb-2">
+                      <img src="setup-diagram.webp" alt="Setup Diagram" class="rounded" style="width:100%;">
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <p class="text-justify">
+                    We filmed our actors inside an LED volume. The actors stood on a platform in the middle of the stage facing toward one curved side wall, with the other curved side wall behind them.  We used the walls in front and to the side of the actor for lighting and an area of the wall just behind the actors for the background, cropped tightly around the camera frustum to minimize spill light.  In the canonical configuration, we drove the lighting with a magenta color consisting of only the red and blue LEDs and the background with a green color consisting of only green LEDs. 
+                  </p>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Results</h4>
+              </div>
+          </div>
+          <div class="row pb-4">
+              <div class="col-12">
+                  <p class="text-justify">We apply the magenta green screen approach to a close-up shop featuring wispy blonde hair and a green outfit, a difficult setup for conventional automatic keying techniques. Our method is able to reliable recover a high-quality alpha channel. Use the button below to toggle between the recovered alpha matte and a resulting composite.</p>
+                  <div class="text-center">
+                  <img-comparison-slider tabindex="0" style="outline: none;" class="coloured-slider slider-with-animated-handle rendered">
+                      <img slot="first" width=100% src="closeup-mg.webp" class="rounded" />
+                      <img id="img-closeup-second" slot="second" width=100% src="closeup-matte.webp" class="rounded" />
+                        <svg slot="handle" class="custom-animated-handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
+                          <path d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="0" fill="#ea8e0e"></path>
+                        </svg>
+                  </img-comparison-slider>
+                  <div id="btn-closeup" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary active">
+                      <input type="radio" name="options" id="matte" checked> Matte
+                    </label>
+                    <label class="btn btn-outline-secondary">
+                      <input type="radio" name="options" id="composite" > Composite
+                    </label>
+                  </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <p class="text-justify">If parts of the scene exhibit colorful transparency, a standard monochrome alpha matte would have the objects transmit incorrectly neutral light. Our method allows to colorize our alpha mattes, using a reference recording of the actors performing while silhouetted in front a white background. We demonstrate a monochrome and full-color alpha matte, both obtained using our magenta green screen approach, and corresponding composites.</p>
+                  <div class="text-center">
+                  <img-comparison-slider tabindex="0" style="outline: none;" class="coloured-slider slider-with-animated-handle rendered">
+                      <img id="img-fullcolor-matte-first" slot="first" width=100% src="fullcolor-holdout.webp" class="rounded" />
+                      <img id="img-fullcolor-matte-second" slot="second" width=100% src="fullcolor-comp.webp" class="rounded" />
+                        <svg slot="handle" class="custom-animated-handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
+                          <path d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="0" fill="#ea8e0e"></path>
+                        </svg>
+                  </img-comparison-slider><br>
+                  <div id="btn-fullcolor-matte" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary active">
+                      <input type="radio" name="options" id="fullcolor" checked> Full-Color Matte
+                    </label>
+                    <label class="btn btn-outline-secondary">
+                      <input type="radio" name="options" id="monochrome" > Monochrome Matte
+                    </label>
+                  </div>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4 class="mb-3">Supplementary Video</h4>
+              </div>
+          </div>
+          <div class="row justify-content-md-center">
+              <div class="col-11">
+                  <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" style="border: 0;" src="https://www.youtube.com/embed/f8s5MsGL1aE" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Paper</h4>
+              </div>
+          </div>
+          <div class="row mt-2 mb-5">
+              <div class="col-2">
+                  <a href="https://arxiv.org/abs/2306.13702"><img src="paper-thumb.webp" alt="Paper" class="layered-paper-big" style="width:80%"></a>
+              </div>
+              <div class="col-10">
+                  <p>
+                  D. Smirnov, C. LeGendre, X. Yu, P. Debevec<br>
+                  <b>Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization</b><br>
+                  The Digital Production Symposium (DigiPro), 2023<br>
+                  <a href="https://arxiv.org/abs/2306.13702">arXiv</a> | <a href="#" data-placement="bottom"  data-popover-content="#mgs-bib" data-toggle="popover">BibTeX</a>
+                  </p>
+              </div>
+              <div id="mgs-bib" class="d-none">
+                  <div class="popover-body">
+                      <pre>@inproceedings{smirnov2023magentagreenscreen,
+  title={Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization},
+  author={Smirnov, Dmitriy and LeGendre, Chloe and Yu, Xueming and Debevec, Paul},
+  year={2023},
+  booktitle={The Digital Production Symposium (DigiPro)}
+}</pre>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-12">
+                  <h4>Press</h4>
+              </div>
+          </div>
+          <div class="row pb-2">
+              <div class="col-2">
+                  <a href="https://www.newscientist.com/article/2379971-netflix-invents-new-green-screen-filming-method-using-magenta-light/"><img src="new-scientist.webp" alt="Netflix invents new green-screen filming method using magenta light" class="img-thumbnail mx-auto d-block img-fluid"></a>
+              </div>
+              <div class="col-10">
+                  <b><a href="https://www.newscientist.com/article/2379971-netflix-invents-new-green-screen-filming-method-using-magenta-light/">Netflix invents new green-screen filming method using magenta light</a></b><br>
+                  New Scientist<br>
+                  July 2023
+              </div>
+          </div>
+          <div class="row pb-2">
+              <div class="col-2">
+                  <a href="https://gizmodo.com/netflix-magenta-green-screens-purple-actors-1850622222"><img src="gizmodo.webp" alt="Netflix Found a Way to Make Removing Green Screens Easier by Turning Actors Bright Purple" class="img-thumbnail mx-auto d-block img-fluid"></a>
+              </div>
+              <div class="col-10">
+                  <b><a href="https://gizmodo.com/netflix-magenta-green-screens-purple-actors-1850622222">Netflix Found a Way to Make Removing Green Screens Easier by Turning Actors Bright Purple</a></b><br>
+                  Gizmodo<br>
+                  July 2023
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-2">
+                  <a href="https://techcrunch.com/2023/07/10/netflixs-ai-assisted-green-screen-bathes-actors-in-eye-searing-magenta/"><img src="techcrunch.webp" alt="Netflix’s AI-assisted green screen bathes actors in eye-searing magenta" class="img-thumbnail mx-auto d-block img-fluid"></a>
+              </div>
+              <div class="col-10">
+                  <b><a href="https://techcrunch.com/2023/07/10/netflixs-ai-assisted-green-screen-bathes-actors-in-eye-searing-magenta/">Netflix’s AI-assisted green screen bathes actors in eye-searing magenta</a></b><br>
+                  TechCrunch<br>
+                  July 2023
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-2">
+                  <a href="https://petapixel.com/2023/07/11/netflixs-new-magenta-method-makes-removing-green-screens-much-easier/"><img src="petapixel.webp" alt="Netflix’s New ‘Magenta Method’ Makes Removing Green Screens Much Easier" class="img-thumbnail mx-auto d-block img-fluid"></a>
+              </div>
+              <div class="col-10">
+                  <b><a href="https://petapixel.com/2023/07/11/netflixs-new-magenta-method-makes-removing-green-screens-much-easier/">Netflix’s New ‘Magenta Method’ Makes Removing Green Screens Much Easier</a></b><br>
+                  PetaPixel<br>
+                  July 2023
+              </div>
+          </div>
+          <div class="row pb-2">
+              <div class="col-2">
+                  <a href="https://www.cined.com/netflix-invents-new-green-screen-keying-method/"><img src="cined.webp" alt="Netflix Invents New Green Screen Keying Method" class="img-thumbnail mx-auto d-block img-fluid"></a>
+              </div>
+              <div class="col-10">
+                  <b><a href="https://www.cined.com/netflix-invents-new-green-screen-keying-method/">Netflix Invents New Green Screen Keying Method</a></b><br>
+                  CineD<br>
+                  July 2023
+              </div>
+          </div>
+          <div class="row pb-2">
+              <div class="col-2">
+                  <a href="https://www.fxguide.com/fxfeatured/the-art-and-craft-of-training-data-yes-training-data/"><img src="fxguide.webp" alt="The Art and Craft of Training Data. Yes, Training Data" class="img-thumbnail mx-auto d-block img-fluid"></a>
+              </div>
+              <div class="col-10">
+                  <b><a href="https://www.fxguide.com/fxfeatured/the-art-and-craft-of-training-data-yes-training-data/">The Art and Craft of Training Data. Yes, Training Data</a></b><br>
+                  fxguide<br>
+                  September 2023
+              </div>
+          </div>
+      </div>
+
+  </body>
+</html>
