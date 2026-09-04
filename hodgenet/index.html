@@ -61,7 +61,7 @@
                   <div class="text-center mb-2">
                       <img src="pipeline.png" alt="Pipeline" class="rounded" style="width:80%;">
                   </div>
-                  <p class="text-justify">An overview of our HodgeNet architecture for learning from triangle meshes. The boxes highlighted in yellow have learnable parameters, while the remaining boxes are fixed computations. Given a triangle mesh as input, we use MLPs to learn per-vertex and per-edge local features, from which we constraint construct the Hodge star operators. Together with a differential matrix, obtained from the mesh topology, we use these operators to assemble a Hodge
+                  <p class="text-justify">An overview of our HodgeNet architecture for learning from triangle meshes. The boxes highlighted in yellow have learnable parameters, while the remaining boxes are fixed computations. Given a triangle mesh as input, we use MLPs to learn per-vertex and per-edge local features, from which we construct the Hodge star operators. Together with a differential matrix, obtained from the mesh topology, we use these operators to assemble a Hodge
                   Laplacian. The eigenpairs of the Laplacian are then used to learn per-vertex, per-face, or per-mesh features suitable for the learning task at hand.</p>
               </div>
           </div>

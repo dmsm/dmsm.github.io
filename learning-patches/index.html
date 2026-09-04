@@ -49,7 +49,7 @@
           <div class="row">
               <div class="col-12">
                   <h4>Abstract</h4>
-                  <p class="text-justify">Choosing the right representation for geometry is crucial for making 3D models compatible with existing applications. Focusing on piecewise-smooth man-made shapes, we propose a new representation that is usable in conventional CAD modeling pipelines and can also be learned by deep neural networks. We demonstrate its benefits by applying it to the task of sketch-based modeling. Given a raster image, our system infers a set of parametric surfaces that realize the input in 3D. To capture piecewise smooth geometry, we learn a special shape representation: a deformable parametric template composed of Coons patches. Naively training such a system, however, is hampered by non-manifold artifacts in the parametric shapes and by a lack of data. To address this, we introduce loss functions that bias the network to output non-self-intersecting shapes and implement them as part of a fully self-supervised system, automatically generating both shape templates and synthetic training data. We develop a testbed for sketch-based modeling, demonstrate shape interpolation, and provide comparison to related work.</p>
+                  <p class="text-justify">Choosing the right representation for geometry is crucial for making 3D models compatible with existing applications. Focusing on piecewise-smooth man-made shapes, we propose a new representation that is usable in conventional CAD modeling pipelines and can also be learned by deep neural networks. We demonstrate its benefits by applying it to the task of sketch-based modeling. Given a raster image, our system infers a set of parametric surfaces that realize the input in 3D. To capture piecewise-smooth geometry, we learn a special shape representation: a deformable parametric template composed of Coons patches. Naively training such a system, however, is hampered by non-manifold artifacts in the parametric shapes and by a lack of data. To address this, we introduce loss functions that bias the network to output non-self-intersecting shapes and implement them as part of a fully self-supervised system, automatically generating both shape templates and synthetic training data. We develop a testbed for sketch-based modeling, demonstrate shape interpolation, and provide a comparison with related work.</p>
               </div>
           </div>
           <hr>
@@ -63,7 +63,7 @@
                   <img src="templates.png" alt="Deformable patch-based templates" class="rounded img-fluid">
               </div>
               <div class="col-6">
-                  <p class="text-justify">Our representation is composed of Coons patches (a) organized into a deformable template (b). A template provides hard topological constraints for our surfaces, an initialization of their geometry, and, optionally, a means for regularization. Templates are crucial in ensuring that the patches have consistent topology&mdash;an approach without templates would result in unstructured, non-manifold patch collections. While our method works using a generic sphere template, we can define templates per shape category to incorporate category-specific priors. These templates capture only coarse geometric features and approximate scale. We present an algorithm for obtaining templates from training data in automatic way.</p>
+                  <p class="text-justify">Our representation is composed of Coons patches (a) organized into a deformable template (b). A template provides hard topological constraints for our surfaces, an initialization of their geometry, and, optionally, a means for regularization. Templates are crucial in ensuring that the patches have consistent topology&mdash;an approach without templates would result in unstructured, non-manifold patch collections. While our method works using a generic sphere template, we can define templates per shape category to incorporate category-specific priors. These templates capture only coarse geometric features and approximate scale. We present an algorithm for obtaining templates automatically from training data.</p>
               </div>
           </div>
           <div class="row">
@@ -119,7 +119,7 @@
   title={Learning Manifold Patch-Based Representations of Man-Made Shapes},
   author={Smirnov, Dmitriy and Bessmeltsev, Mikhail and Solomon, Justin},
   year={2021},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}
+  booktitle={Proceedings of the International Conference on Learning Representations (ICLR)}
 }</pre>
                   </div>
               </div>
