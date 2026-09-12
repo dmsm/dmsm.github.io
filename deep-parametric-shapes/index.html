@@ -6,66 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
     <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/paper.css">
 
     <title>Deep Parametric Shape Predictions using Distance Fields</title>
+    <meta name="description" content="Learning parametric curves and surfaces from distance fields for shape prediction and abstraction. CVPR 2020 research by Dmitriy Smirnov and collaborators.">
+    <link rel="canonical" href="https://dsmirnov.com/deep-parametric-shapes/">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Dmitriy Smirnov">
+    <meta property="og:title" content="Deep Parametric Shape Predictions using Distance Fields">
+    <meta property="og:description" content="Learning parametric curves and surfaces from distance fields for shape prediction and abstraction. CVPR 2020 research by Dmitriy Smirnov and collaborators.">
+    <meta property="og:url" content="https://dsmirnov.com/deep-parametric-shapes/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@dima_smirnov_">
+    <meta name="twitter:title" content="Deep Parametric Shape Predictions using Distance Fields">
+    <meta name="twitter:description" content="Learning parametric curves and surfaces from distance fields for shape prediction and abstraction. CVPR 2020 research by Dmitriy Smirnov and collaborators.">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23662412-4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-23662412-4');
-    </script>
   </head>
-  <body class="bg-light">
-      <div class="container container-small pb-5">
-          <div class="row pt-4 pb-3 justify-content-center">
-              <div class="col-12 pt-1">
-                  <h2 class="text-center">Deep Parametric Shape Predictions using Distance Fields</h2>
-                  <div class="text-center font-weight-normal h5">
-                      <a class="pr-5" href="https://dsmirnov.com">Dmitriy Smirnov<sup>1</sup></a>
-                      <a class="pr-5" href="https://techmatt.github.io">Matthew Fisher<sup>2</sup></a>
-                      <a href="http://www.vovakim.com">Vladimir G. Kim<sup>2</sup></a><br>
-                      <a class="pr-5" href="https://richzhang.github.io">Richard Zhang<sup>2</sup></a>
+  <body class="bg-light paper-page">
+      <main class="container paper-container">
+          <a class="paper-back" href="../" target="_self">← Back to home</a>
+          <header class="paper-header">
+              <div>
+                  <h1 class="paper-title">Deep Parametric Shape Predictions using Distance Fields</h1>
+                  <div class="paper-authors">
+                      <a class="paper-self" href="../" target="_self">Dmitriy Smirnov<sup>1</sup></a>
+                      <a href="https://techmatt.github.io">Matthew Fisher<sup>2</sup></a>
+                      <a href="http://www.vovakim.com">Vladimir G. Kim<sup>2</sup></a>
+                      <a href="https://richzhang.github.io">Richard Zhang<sup>2</sup></a>
                       <a href="https://people.csail.mit.edu/jsolomon/">Justin Solomon<sup>1</sup></a>
                    </div>
-                  <div class="text-center font-weight-normal h6 pt-2">
-                      <span class="pr-5"><sup>1</sup>Massachusetts Institute of Technology</span>
+                  <div class="paper-affiliations">
+                      <span><sup>1</sup>Massachusetts Institute of Technology</span>
                       <span><sup>2</sup>Adobe Research</span>
                   </div>
-                  <div class="text-center font-weight-normal h5 pt-2">
+                  <div class="paper-venue">
                       <a href="http://cvpr2020.thecvf.com">CVPR 2020</a>
                   </div>
               </div>
-          </div>
+          </header>
           <div class="row">
               <div class="col-12">
-                  <img src="im.png" alt="Deep Parametric Shape Predictions using Distance Fields" class="rounded img-fluid">
-              </div>
-          </div>
-          <hr>
-          <div class="row">
-              <div class="col-12">
-                  <h4>Abstract</h4>
-                  <p class="text-justify">Many tasks in graphics and vision demand machinery for converting shapes into consistent representations with sparse sets of parameters; these representations facilitate rendering, editing, and storage. When the source data is noisy or ambiguous, however, artists and engineers often manually construct such representations, a tedious and potentially time-consuming process. While advances in deep learning have been successfully applied to noisy geometric data, the task of generating parametric shapes has so far been difficult for these methods. Hence, we propose a new framework for predicting parametric shape primitives using deep learning.  We use distance fields to transition between shape parameters like control points and input data on a pixel grid. We demonstrate efficacy on 2D and 3D tasks, including font vectorization and surface abstraction.</p>
-              </div>
-          </div>
-          <hr>
-          <div class="row">
-              <div class="col-12">
-                  <h4>Method</h4>
+                  <img src="im.png" alt="Deep Parametric Shape Predictions using Distance Fields" class="paper-figure img-fluid">
               </div>
           </div>
           <div class="row">
-              <div class="col-7">
+              <div class="col-12">
+                  <h2 class="paper-section-title">Abstract</h2>
+                  <p class="paper-text">Many tasks in graphics and vision demand machinery for converting shapes into consistent representations with sparse sets of parameters; these representations facilitate rendering, editing, and storage. When the source data is noisy or ambiguous, however, artists and engineers often manually construct such representations, a tedious and potentially time-consuming process. While advances in deep learning have been successfully applied to noisy geometric data, the task of generating parametric shapes has so far been difficult for these methods. Hence, we propose a new framework for predicting parametric shape primitives using deep learning.  We use distance fields to transition between shape parameters like control points and input data on a pixel grid. We demonstrate efficacy on 2D and 3D tasks, including font vectorization and surface abstraction.</p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <h2 class="paper-section-title">Method</h2>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12 col-md-7">
                   <img src="chamfer.png" alt="Comparison to Chamfer distance" class="rounded img-fluid">
               </div>
-              <div class="col-5">
-                  <p class="text-justify">Drawbacks of Chamfer distance (above) are fixed by our losses (below). On the left, sampling uniformly in the parameter space of a Bézier curve (orange) yields oversampling at the high-curvature area, resulting in a low Chamfer distance to the segments (blue). Our method yields a spatially uniform representation. On the right, two sets of nearly-orthogonal line segments have near-zero Chamfer distance despite misaligned normals. We explicitly measure normal alignment.</p>
+              <div class="col-12 col-md-5">
+                  <p class="paper-text">Drawbacks of Chamfer distance (above) are fixed by our losses (below). On the left, sampling uniformly in the parameter space of a Bézier curve (orange) yields oversampling at the high-curvature area, resulting in a low Chamfer distance to the segments (blue). Our method yields a spatially uniform representation. On the right, two sets of nearly-orthogonal line segments have near-zero Chamfer distance despite misaligned normals. We explicitly measure normal alignment.</p>
               </div>
           </div>
           <div class="row">
@@ -73,33 +75,31 @@
                   <div class="text-center mb-2">
                       <img src="pipeline.png" alt="Pipeline" class="rounded" style="width:80%;">
                   </div>
-                  <p class="text-justify">Our font vectorization pipeline is illustrated in green, and our 3D shape abstraction pipeline is in orange. </p>
+                  <p class="paper-text">Our font vectorization pipeline is illustrated in green, and our 3D shape abstraction pipeline is in orange. </p>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4 class="mb-3">Video</h4>
+                  <h2 class="paper-section-title">Video</h2>
               </div>
           </div>
           <div class="row justify-content-md-center">
-              <div class="col-11">
+              <div class="col-12">
                   <div class="embed-responsive embed-responsive-16by9">
-                      <iframe width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/v_0UrjbTtHg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe title="Research presentation video" width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/v_0UrjbTtHg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4>Paper and supplementary material</h4>
+                  <h2 class="paper-section-title">Paper and supplementary material</h2>
               </div>
           </div>
-          <div class="row mt-2 mb-5">
-              <div class="col-2">
-                  <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Smirnov_Deep_Parametric_Shape_Predictions_Using_Distance_Fields_CVPR_2020_paper.pdf"><img src="paper-thumb.png" alt="Paper" class="layered-paper-big" style="width:80%"></a>
+          <div class="paper-resource">
+              <div class="paper-resource-image">
+                  <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Smirnov_Deep_Parametric_Shape_Predictions_Using_Distance_Fields_CVPR_2020_paper.pdf"><img src="paper-thumb.png" alt="Paper" class="paper-thumbnail"></a>
               </div>
-              <div class="col-10">
+              <div class="paper-resource-body">
                   <p>
                   D. Smirnov, M. Fisher, V. G. Kim, R. Zhang, J. Solomon<br>
                   <b>Deep Parametric Shape Predictions using Distance Fields</b><br>
@@ -118,46 +118,42 @@
                   </div>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4>Poster</h4>
+                  <h2 class="paper-section-title">Poster</h2>
                   <div class="text-center">
                       <div>
-                          <iframe src="poster.pdf" height="700" style="width:100%;"></iframe>
+                          <iframe class="paper-poster" title="Research poster" src="poster.pdf" height="700" style="width:100%;"></iframe>
                       </div>
                       <a href="poster.pdf">pdf</a> [6M]
                   </div>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4 class="mb-2">Code, models, and data</h4>
-                  <a href="https://github.com/dmsm/DeepParametricShapes"><i class="fab fa-github fa-lg"></i> GitHub</a>
+                  <h2 class="paper-section-title">Code, models, and data</h2>
+                  <a href="https://github.com/dmsm/DeepParametricShapes">GitHub</a>
                   <div class="mt-2">
                     <a class="github-button" href="https://github.com/dmsm/DeepParametricShapes" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/DeepParametricShapes on GitHub">Star</a>
                   </div>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4>Acknowledgements</h4>
-                  <p class="text-justify">The authors acknowledge the generous support of Army Research Office grant W911NF1710068, Air Force Office of Scientific Research award FA9550-19-1-031, of National Science Foundation grant IIS-1838071, National Science Foundation Graduate Research Fellowship under Grant No. 1122374, from an Amazon Research Award, from the MIT-IBM Watson AI Laboratory, from the Toyota-CSAIL Joint Research Center, from a gift from Adobe Systems, and from the Skoltech-MIT Next Generation Program.</p>
+                  <h2 class="paper-section-title">Acknowledgements</h2>
+                  <p class="paper-text">The authors acknowledge the generous support of Army Research Office grant W911NF1710068, Air Force Office of Scientific Research award FA9550-19-1-031, of National Science Foundation grant IIS-1838071, National Science Foundation Graduate Research Fellowship under Grant No. 1122374, from an Amazon Research Award, from the MIT-IBM Watson AI Laboratory, from the Toyota-CSAIL Joint Research Center, from a gift from Adobe Systems, and from the Skoltech-MIT Next Generation Program.</p>
               </div>
           </div>
-      </div>
+      </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/61636ac538.js" crossorigin="anonymous"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
         $(function () {
           $('[data-toggle="popover"]').click(function(e) {
             e.preventDefault();
-          }).popover({ 
+          }).popover({
               container : 'body',
               html : true,
               content: function() {

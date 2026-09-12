@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Avenir';
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
-  src: local('Avenir Book'), local('Avenir-300'),
+  src: local('Avenir Book'), local('Avenir-Book'),
     url('Avenir/Avenir-Book.eot') format('embedded-opentype'),
     url('Avenir/Avenir-Book.woff') format('woff'),
     url('Avenir/Avenir-Book.ttf') format('truetype');
@@ -12,7 +12,7 @@
   font-family: 'Avenir';
   font-weight: 500;
   font-style: normal;
-  src: local('Avenir Medium'), local('Avenir-500'),
+  src: local('Avenir Medium'), local('Avenir-Medium'),
     url('Avenir/Avenir-Medium.eot') format('embedded-opentype'),
     url('Avenir/Avenir-Medium.woff') format('woff'),
     url('Avenir/Avenir-Medium.ttf') format('truetype');
@@ -22,20 +22,20 @@
   font-family: 'Avenir';
   font-weight: 700;
   font-style: normal;
-  src: local('Avenir Heavy'), local('Avenir-700'),
-    url('Avenir/Avenir-Heavy/Avenir-Heavy.eot') format('embedded-opentype'),
-    url('Avenir/Avenir-Heavy/Avenir-Heavy.woff') format('woff'),
-    url('Avenir/Avenir-Heavy/Avenir-Heavy.ttf') format('truetype');
+  src: local('Avenir Heavy'), local('Avenir-Heavy'),
+    url('Avenir/Avenir-Heavy.eot') format('embedded-opentype'),
+    url('Avenir/Avenir-Heavy.woff') format('woff'),
+    url('Avenir/Avenir-Heavy.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Avenir';
   font-weight: 900;
   font-style: normal;
-  src: local('Avenir Black'), local('Avenir-900'),
-    url('Avenir/Avenir-Black/Avenir-Black.eot') format('embedded-opentype'),
-    url('Avenir/Avenir-Black/Avenir-Black.woff') format('woff'),
-    url('Avenir/Avenir-Black/Avenir-Black.ttf') format('truetype');
+  src: local('Avenir Black'), local('Avenir-Black'),
+    url('Avenir/Avenir-Black.eot') format('embedded-opentype'),
+    url('Avenir/Avenir-Black.woff') format('woff'),
+    url('Avenir/Avenir-Black.ttf') format('truetype');
 }
 
 body {

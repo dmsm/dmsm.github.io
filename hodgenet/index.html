@@ -6,54 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
     <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/paper.css">
 
     <title>HodgeNet: Learning Spectral Geometry on Triangle Meshes</title>
+    <meta name="description" content="Learning spectral geometry on triangle meshes with discrete exterior calculus. SIGGRAPH 2021 research by Dmitriy Smirnov and Justin Solomon.">
+    <link rel="canonical" href="https://dsmirnov.com/hodgenet/">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Dmitriy Smirnov">
+    <meta property="og:title" content="HodgeNet: Learning Spectral Geometry on Triangle Meshes">
+    <meta property="og:description" content="Learning spectral geometry on triangle meshes with discrete exterior calculus. SIGGRAPH 2021 research by Dmitriy Smirnov and Justin Solomon.">
+    <meta property="og:url" content="https://dsmirnov.com/hodgenet/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@dima_smirnov_">
+    <meta name="twitter:title" content="HodgeNet: Learning Spectral Geometry on Triangle Meshes">
+    <meta name="twitter:description" content="Learning spectral geometry on triangle meshes with discrete exterior calculus. SIGGRAPH 2021 research by Dmitriy Smirnov and Justin Solomon.">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23662412-4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-23662412-4');
-    </script>
   </head>
-  <body class="bg-light">
-      <div class="container container-small pb-5">
-          <div class="row pt-4 pb-3 justify-content-center">
-              <div class="col-12 pt-1">
-                  <h2 class="text-center">HodgeNet: Learning Spectral Geometry on Triangle Meshes</h2>
-                  <div class="text-center font-weight-normal h5">
-                      <a class="pr-5" href="https://dsmirnov.com">Dmitriy Smirnov</a>
+  <body class="bg-light paper-page">
+      <main class="container paper-container">
+          <a class="paper-back" href="../" target="_self">← Back to home</a>
+          <header class="paper-header">
+              <div>
+                  <h1 class="paper-title">HodgeNet: Learning Spectral Geometry on Triangle Meshes</h1>
+                  <div class="paper-authors">
+                      <a class="paper-self" href="../" target="_self">Dmitriy Smirnov</a>
                       <a href="https://people.csail.mit.edu/jsolomon/">Justin Solomon</a>
                    </div>
-                  <div class="text-center font-weight-normal h6 pt-2">
+                  <div class="paper-affiliations">
                       Massachusetts Institute of Technology
                   </div>
-                  <div class="text-center font-weight-normal h5 pt-2">
+                  <div class="paper-venue">
                       <a href="https://s2021.siggraph.org">SIGGRAPH 2021</a>
                   </div>
               </div>
-          </div>
+          </header>
           <div class="row">
               <div class="col-12">
-                  <img src="im.png" alt="HodgeNet: Learning Spectral Geometry on Triangle Meshes" class="rounded img-fluid">
+                  <img src="im.png" alt="HodgeNet: Learning Spectral Geometry on Triangle Meshes" class="paper-figure img-fluid">
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4>Abstract</h4>
-                  <p class="text-justify">Constrained by the limitations of learning toolkits engineered for other applications, such as those in image processing, many mesh-based learning algorithms employ data flows that would be atypical from the perspective of conventional geometry processing.  As an alternative, we present a technique for learning from meshes built from standard geometry processing modules and operations.  We show that low-order eigenvalue/eigenvector computation from operators parameterized using discrete exterior calculus is amenable to efficient approximate backpropagation, yielding spectral per-element or per-mesh features with similar formulas to classical descriptors like the heat/wave kernel signatures.  Our model uses few parameters, generalizes to high-resolution meshes, and exhibits performance and time complexity on par with past work.</p>
+                  <h2 class="paper-section-title">Abstract</h2>
+                  <p class="paper-text">Constrained by the limitations of learning toolkits engineered for other applications, such as those in image processing, many mesh-based learning algorithms employ data flows that would be atypical from the perspective of conventional geometry processing.  As an alternative, we present a technique for learning from meshes built from standard geometry processing modules and operations.  We show that low-order eigenvalue/eigenvector computation from operators parameterized using discrete exterior calculus is amenable to efficient approximate backpropagation, yielding spectral per-element or per-mesh features with similar formulas to classical descriptors like the heat/wave kernel signatures.  Our model uses few parameters, generalizes to high-resolution meshes, and exhibits performance and time complexity on par with past work.</p>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4>Method</h4>
+                  <h2 class="paper-section-title">Method</h2>
               </div>
           </div>
           <div class="row">
@@ -61,34 +63,32 @@
                   <div class="text-center mb-2">
                       <img src="pipeline.png" alt="Pipeline" class="rounded" style="width:80%;">
                   </div>
-                  <p class="text-justify">An overview of our HodgeNet architecture for learning from triangle meshes. The boxes highlighted in yellow have learnable parameters, while the remaining boxes are fixed computations. Given a triangle mesh as input, we use MLPs to learn per-vertex and per-edge local features, from which we construct the Hodge star operators. Together with a differential matrix, obtained from the mesh topology, we use these operators to assemble a Hodge
+                  <p class="paper-text">An overview of our HodgeNet architecture for learning from triangle meshes. The boxes highlighted in yellow have learnable parameters, while the remaining boxes are fixed computations. Given a triangle mesh as input, we use MLPs to learn per-vertex and per-edge local features, from which we construct the Hodge star operators. Together with a differential matrix, obtained from the mesh topology, we use these operators to assemble a Hodge
                   Laplacian. The eigenpairs of the Laplacian are then used to learn per-vertex, per-face, or per-mesh features suitable for the learning task at hand.</p>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4 class="mb-3">Video</h4>
+                  <h2 class="paper-section-title">Video</h2>
               </div>
           </div>
           <div class="row justify-content-md-center">
-              <div class="col-11">
+              <div class="col-12">
                   <div class="embed-responsive embed-responsive-16by9">
-                      <iframe width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/juP0PHxvnx8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe title="Research presentation video" width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/juP0PHxvnx8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4>Paper and supplementary material</h4>
+                  <h2 class="paper-section-title">Paper and supplementary material</h2>
               </div>
           </div>
-          <div class="row mt-2 mb-5">
-              <div class="col-2">
-                  <a href="https://dl.acm.org/doi/abs/10.1145/3450626.3459797"><img src="paper-thumb.png" alt="Paper" class="layered-paper-big" style="width:80%"></a>
+          <div class="paper-resource">
+              <div class="paper-resource-image">
+                  <a href="https://dl.acm.org/doi/abs/10.1145/3450626.3459797"><img src="paper-thumb.png" alt="Paper" class="paper-thumbnail"></a>
               </div>
-              <div class="col-10">
+              <div class="paper-resource-body">
                   <p>
                   D. Smirnov, J. Solomon<br>
                   <b>HodgeNet: Learning Spectral Geometry on Triangle Meshes</b><br>
@@ -112,34 +112,31 @@
                   </div>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4 class="mb-2">Code</h4>
-                  <a href="https://github.com/dmsm/HodgeNet"><i class="fab fa-github fa-lg"></i> GitHub</a>
+                  <h2 class="paper-section-title">Code</h2>
+                  <a href="https://github.com/dmsm/HodgeNet">GitHub</a>
                   <div class="mt-2">
                   <a class="github-button" href="https://github.com/dmsm/HodgeNet" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/HodgeNet on GitHub">Star</a>
                   </div>
               </div>
           </div>
-          <hr>
           <div class="row">
               <div class="col-12">
-                  <h4>Acknowledgements</h4>
-                  <p class="text-justify">The MIT Geometric Data Processing group acknowledges the generous support of Army Research Office grant W911NF2010168, of Air Force Office of Scientific Research award FA9550-19-1-031, of National Science Foundation grant IIS-1838071, from the CSAIL Systems that Learn program, from the MIT–IBM Watson AI Laboratory, from the Toyota-CSAIL Joint Research Center, from a gift from Adobe Systems, from an MIT.nano Immersion Lab/NCSOFT Gaming Program seed grant, and from the Skoltech-MIT Next Generation Program. This work was also supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1122374.</p>
+                  <h2 class="paper-section-title">Acknowledgements</h2>
+                  <p class="paper-text">The MIT Geometric Data Processing group acknowledges the generous support of Army Research Office grant W911NF2010168, of Air Force Office of Scientific Research award FA9550-19-1-031, of National Science Foundation grant IIS-1838071, from the CSAIL Systems that Learn program, from the MIT–IBM Watson AI Laboratory, from the Toyota-CSAIL Joint Research Center, from a gift from Adobe Systems, from an MIT.nano Immersion Lab/NCSOFT Gaming Program seed grant, and from the Skoltech-MIT Next Generation Program. This work was also supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1122374.</p>
               </div>
           </div>
-      </div>
+      </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/61636ac538.js" crossorigin="anonymous"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
         $(function () {
           $('[data-toggle="popover"]').click(function(e) {
             e.preventDefault();
-          }).popover({ 
+          }).popover({
               container : 'body',
               html : true,
               content: function() {
