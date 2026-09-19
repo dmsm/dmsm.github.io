@@ -121,9 +121,9 @@
 
 .work-item {
   display: grid;
-  grid-template-columns: 7.5rem minmax(0, 1fr);
+  grid-template-columns: 6rem minmax(0, 1fr);
   align-items: start;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-bottom: 1.75rem;
 }
 
@@ -196,9 +196,9 @@
 
 .publication {
   display: grid;
-  grid-template-columns: 7.5rem minmax(0, 1fr);
+  grid-template-columns: 6rem minmax(0, 1fr);
   align-items: start;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-bottom: 1.75rem;
 }
 
@@ -208,13 +208,13 @@
 
 .publication-image {
   display: block;
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 6rem;
+  height: 6rem;
   padding: 0;
   border: 1px solid #d8dde2;
   border-radius: 6px;
   background: #fff;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -322,17 +322,14 @@
     margin-bottom: 2rem;
   }
 
-  .work-item {
-    grid-template-columns: 6rem minmax(0, 1fr);
+  .work-item,
+  .publication {
+    grid-template-columns: 4rem minmax(0, 1fr);
   }
 
   .publication-image {
-    width: 6rem;
-    height: 6rem;
-  }
-
-  .publication {
-    grid-template-columns: minmax(0, 1fr);
+    width: 4rem;
+    height: 4rem;
   }
 
   .publication-authors,
@@ -343,6 +340,7 @@
 
   .work-links a,
   .publication-links a,
+  .publication-links .link-button,
   .profile-links a {
     display: inline-flex;
     align-items: center;

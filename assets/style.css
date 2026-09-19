@@ -42,6 +42,30 @@ body {
 		font-family: 'Avenir', sans-serif;
 		font-size: 14px;
 }
+
+.link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #a85d08;
+  font: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+
+.link-button:hover,
+.link-button[aria-expanded="true"] {
+  color: #804500;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.link-button:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid #a85d08;
+  outline-offset: 4px;
+}
 @media (min-width: 1200px) {
 		.container-small {
 				width: 960px;

@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <base target="_blank">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@7/dist/styles.css" />
-    <link rel="stylesheet" href="../assets/style.css">
-    <link rel="stylesheet" href="../assets/paper.css">
+    <link rel="stylesheet" href="../assets/style.css?v=20260919">
+    <link rel="stylesheet" href="../assets/paper.css?v=20260919-2">
 
     <title>Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization</title>
     <meta name="description" content="Magenta Green Screen uses colored lighting and deep colorization to capture high-quality alpha mattes for compositing. DigiPro 2023 research.">
@@ -28,35 +27,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
         $(function () {
-          $('[data-toggle="popover"]').click(function(e) {
-            e.preventDefault();
-          }).popover({
-              container : 'body',
-              html : true,
-              content: function() {
-              var content = $(this).attr("data-popover-content");
-              return $(content).children(".popover-body").html();
-              }
-          });
           $("#btn-closeup :input").change(function(){
               switch(this.id) {
                   case "matte":
-                      $("#img-closeup-second").attr("src", "closeup-matte.webp");
+                      $("#img-closeup-second").attr({src: "closeup-matte.webp", alt: "Recovered alpha matte of hair and clothing"});
                       break;
                   case "composite":
-                      $("#img-closeup-second").attr("src", "closeup-comp.webp");
+                      $("#img-closeup-second").attr({src: "closeup-comp.webp", alt: "Composite of the actor on a new background"});
                       break;
               }
           });
           $("#btn-fullcolor-matte :input").change(function(){
               switch(this.id) {
                   case "monochrome":
-                      $("#img-fullcolor-matte-first").attr("src", "monochrome-holdout.webp");
-                      $("#img-fullcolor-matte-second").attr("src", "monochrome-comp.webp");
+                      $("#img-fullcolor-matte-first").attr({src: "monochrome-holdout.webp", alt: "Monochrome holdout matte"});
+                      $("#img-fullcolor-matte-second").attr({src: "monochrome-comp.webp", alt: "Composite using the monochrome matte"});
                       break;
                   case "fullcolor":
-                      $("#img-fullcolor-matte-first").attr("src", "fullcolor-holdout.webp");
-                      $("#img-fullcolor-matte-second").attr("src", "fullcolor-comp.webp");
+                      $("#img-fullcolor-matte-first").attr({src: "fullcolor-holdout.webp", alt: "Full-color holdout matte"});
+                      $("#img-fullcolor-matte-second").attr({src: "fullcolor-comp.webp", alt: "Composite using the full-color matte"});
                       break;
               }
           });
@@ -66,28 +55,27 @@
   </head>
   <body class="bg-light paper-page">
       <main class="container paper-container">
-          <a class="paper-back" href="../" target="_self">← Back to home</a>
           <header class="paper-header">
               <div>
                   <h1 class="paper-title">Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization</h1>
                   <div class="paper-authors">
                       <a class="paper-self" href="../" target="_self">Dmitriy Smirnov<sup>1</sup></a>
-                      <a href="http://chloelegendre.com">Chloe LeGendre<sup>2</sup></a>
-                      <a href="http://yu.xueming.org">Xueming Yu<sup>2</sup></a>
-                      <a href="https://www.pauldebevec.com">Paul Debevec<sup>2</sup></a>
+                      <a href="http://chloelegendre.com" target="_blank" rel="noopener">Chloe LeGendre<sup>2</sup></a>
+                      <a href="https://www.linkedin.com/in/xuemingyu" target="_blank" rel="noopener">Xueming Yu<sup>2</sup></a>
+                      <a href="https://www.pauldebevec.com" target="_blank" rel="noopener">Paul Debevec<sup>2</sup></a>
                    </div>
                   <div class="paper-affiliations">
                       <span><sup>1</sup>Netflix</span>
                       <span><sup>2</sup>Netflix Eyeline Studios</span>
                   </div>
                   <div class="paper-venue">
-                      <a href="https://dp2023.digiproconf.org/">DigiPro 2023</a>
+                      <a href="https://dp2023.digiproconf.org/" target="_blank" rel="noopener">DigiPro 2023</a>
                   </div>
               </div>
           </header>
           <div class="row">
               <div class="col-12">
-                  <img src="im.webp" alt="Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization" class="paper-figure img-fluid">
+                  <img src="im.webp" alt="Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization" class="paper-figure img-fluid" width="1756" height="794" decoding="async">
               </div>
           </div>
           <div class="row">
@@ -111,12 +99,12 @@
           <div class="row mb-2">
               <div class="col-12 col-md-6">
                   <div class="text-center mb-2">
-                      <img src="setup.webp" alt="Setup" class="rounded" style="width:100%;">
+                      <img src="setup.webp" alt="Setup" class="rounded" style="width:100%;" width="2121" height="1105" decoding="async" loading="lazy">
                   </div>
               </div>
               <div class="col-12 col-md-6">
                   <div class="text-center mb-2">
-                      <img src="setup-diagram.webp" alt="Setup Diagram" class="rounded" style="width:100%;">
+                      <img src="setup-diagram.webp" alt="Setup Diagram" class="rounded" style="width:100%;" width="2121" height="1105" decoding="async" loading="lazy">
                   </div>
               </div>
           </div>
@@ -137,8 +125,8 @@
                   <p class="paper-text">We apply the magenta green screen approach to a close-up shot featuring wispy blonde hair and a green outfit, a difficult setup for conventional automatic keying techniques. Our method is able to reliably recover a high-quality alpha channel. Use the button below to toggle between the recovered alpha matte and a resulting composite.</p>
                   <div class="text-center">
                   <img-comparison-slider tabindex="0" class="coloured-slider slider-with-animated-handle rendered">
-                      <img slot="first" width=100% src="closeup-mg.webp" class="rounded" />
-                      <img id="img-closeup-second" slot="second" width=100% src="closeup-matte.webp" class="rounded" />
+                      <img slot="first" src="closeup-mg.webp" class="rounded" alt="Actor under magenta and green lighting" width="1080" height="1080" decoding="async" loading="lazy">
+                      <img id="img-closeup-second" slot="second" src="closeup-matte.webp" class="rounded" alt="Recovered alpha matte of hair and clothing" width="1080" height="1080" decoding="async" loading="lazy">
                         <svg slot="handle" class="custom-animated-handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
                           <path d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="0" fill="currentColor"></path>
                         </svg>
@@ -159,8 +147,8 @@
                   <p class="paper-text">If parts of the scene exhibit colorful transparency, a standard monochrome alpha matte would have the objects transmit incorrectly neutral light. Our method allows us to colorize our alpha mattes, using a reference recording of the actors performing while silhouetted in front of a white background. We demonstrate both monochrome and full-color alpha mattes, obtained using our magenta green screen approach, and corresponding composites.</p>
                   <div class="text-center">
                   <img-comparison-slider tabindex="0" class="coloured-slider slider-with-animated-handle rendered">
-                      <img id="img-fullcolor-matte-first" slot="first" width=100% src="fullcolor-holdout.webp" class="rounded" />
-                      <img id="img-fullcolor-matte-second" slot="second" width=100% src="fullcolor-comp.webp" class="rounded" />
+                      <img id="img-fullcolor-matte-first" slot="first" src="fullcolor-holdout.webp" class="rounded" alt="Full-color holdout matte" width="497" height="497" decoding="async" loading="lazy">
+                      <img id="img-fullcolor-matte-second" slot="second" src="fullcolor-comp.webp" class="rounded" alt="Composite using the full-color matte" width="497" height="497" decoding="async" loading="lazy">
                         <svg slot="handle" class="custom-animated-handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
                           <path d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="0" fill="currentColor"></path>
                         </svg>
@@ -184,7 +172,7 @@
           <div class="row justify-content-md-center">
               <div class="col-12">
                   <div class="embed-responsive embed-responsive-16by9">
-                      <iframe title="Research presentation video" class="embed-responsive-item" style="border: 0;" src="https://www.youtube.com/embed/f8s5MsGL1aE" allowfullscreen></iframe>
+                      <iframe loading="lazy" title="Research presentation video" class="embed-responsive-item" style="border: 0;" src="https://www.youtube.com/embed/f8s5MsGL1aE" allowfullscreen></iframe>
                   </div>
               </div>
           </div>
@@ -195,14 +183,14 @@
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://arxiv.org/abs/2306.13702"><img src="paper-thumb.webp" alt="Paper" class="paper-thumbnail"></a>
+                  <a href="https://arxiv.org/abs/2306.13702" target="_blank" rel="noopener"><img src="paper-thumb.webp" alt="First page of Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization" class="paper-thumbnail paper-cover" width="1250" height="1624" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
                   <p>
                   D. Smirnov, C. LeGendre, X. Yu, P. Debevec<br>
                   <b>Magenta Green Screen: Spectrally Multiplexed Alpha Matting with Deep Colorization</b><br>
                   The Digital Production Symposium (DigiPro), 2023<br>
-                  <a href="https://arxiv.org/abs/2306.13702">arXiv</a> | <a href="#" data-placement="bottom"  data-popover-content="#mgs-bib" data-toggle="popover">BibTeX</a>
+                  <a href="https://arxiv.org/abs/2306.13702" target="_blank" rel="noopener">arXiv</a> | <button type="button" class="link-button" data-placement="bottom"  data-popover-content="#mgs-bib" data-toggle="popover" aria-expanded="false">BibTeX</button>
                   </p>
               </div>
               <div id="mgs-bib" class="d-none">
@@ -223,65 +211,66 @@
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://www.newscientist.com/article/2379971-netflix-invents-new-green-screen-filming-method-using-magenta-light/"><img src="new-scientist.webp" alt="Netflix invents new green-screen filming method using magenta light" class="paper-thumbnail"></a>
+                  <a href="https://www.newscientist.com/article/2379971-netflix-invents-new-green-screen-filming-method-using-magenta-light/" target="_blank" rel="noopener"><img src="new-scientist.webp" alt="Netflix invents new green-screen filming method using magenta light" class="paper-thumbnail" width="1950" height="1300" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
-                  <b><a href="https://www.newscientist.com/article/2379971-netflix-invents-new-green-screen-filming-method-using-magenta-light/">Netflix invents new green-screen filming method using magenta light</a></b><br>
+                  <b><a href="https://www.newscientist.com/article/2379971-netflix-invents-new-green-screen-filming-method-using-magenta-light/" target="_blank" rel="noopener">Netflix invents new green-screen filming method using magenta light</a></b><br>
                   New Scientist<br>
                   July 2023
               </div>
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://gizmodo.com/netflix-magenta-green-screens-purple-actors-1850622222"><img src="gizmodo.webp" alt="Netflix Found a Way to Make Removing Green Screens Easier by Turning Actors Bright Purple" class="paper-thumbnail"></a>
+                  <a href="https://gizmodo.com/netflix-magenta-green-screens-purple-actors-1850622222" target="_blank" rel="noopener"><img src="gizmodo.webp" alt="Netflix Found a Way to Make Removing Green Screens Easier by Turning Actors Bright Purple" class="paper-thumbnail" width="1950" height="1300" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
-                  <b><a href="https://gizmodo.com/netflix-magenta-green-screens-purple-actors-1850622222">Netflix Found a Way to Make Removing Green Screens Easier by Turning Actors Bright Purple</a></b><br>
+                  <b><a href="https://gizmodo.com/netflix-magenta-green-screens-purple-actors-1850622222" target="_blank" rel="noopener">Netflix Found a Way to Make Removing Green Screens Easier by Turning Actors Bright Purple</a></b><br>
                   Gizmodo<br>
                   July 2023
               </div>
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://techcrunch.com/2023/07/10/netflixs-ai-assisted-green-screen-bathes-actors-in-eye-searing-magenta/"><img src="techcrunch.webp" alt="Netflix’s AI-assisted green screen bathes actors in eye-searing magenta" class="paper-thumbnail"></a>
+                  <a href="https://techcrunch.com/2023/07/10/netflixs-ai-assisted-green-screen-bathes-actors-in-eye-searing-magenta/" target="_blank" rel="noopener"><img src="techcrunch.webp" alt="Netflix’s AI-assisted green screen bathes actors in eye-searing magenta" class="paper-thumbnail" width="1950" height="1300" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
-                  <b><a href="https://techcrunch.com/2023/07/10/netflixs-ai-assisted-green-screen-bathes-actors-in-eye-searing-magenta/">Netflix’s AI-assisted green screen bathes actors in eye-searing magenta</a></b><br>
+                  <b><a href="https://techcrunch.com/2023/07/10/netflixs-ai-assisted-green-screen-bathes-actors-in-eye-searing-magenta/" target="_blank" rel="noopener">Netflix’s AI-assisted green screen bathes actors in eye-searing magenta</a></b><br>
                   TechCrunch<br>
                   July 2023
               </div>
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://petapixel.com/2023/07/11/netflixs-new-magenta-method-makes-removing-green-screens-much-easier/"><img src="petapixel.webp" alt="Netflix’s New ‘Magenta Method’ Makes Removing Green Screens Much Easier" class="paper-thumbnail"></a>
+                  <a href="https://petapixel.com/2023/07/11/netflixs-new-magenta-method-makes-removing-green-screens-much-easier/" target="_blank" rel="noopener"><img src="petapixel.webp" alt="Netflix’s New ‘Magenta Method’ Makes Removing Green Screens Much Easier" class="paper-thumbnail" width="1950" height="1300" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
-                  <b><a href="https://petapixel.com/2023/07/11/netflixs-new-magenta-method-makes-removing-green-screens-much-easier/">Netflix’s New ‘Magenta Method’ Makes Removing Green Screens Much Easier</a></b><br>
+                  <b><a href="https://petapixel.com/2023/07/11/netflixs-new-magenta-method-makes-removing-green-screens-much-easier/" target="_blank" rel="noopener">Netflix’s New ‘Magenta Method’ Makes Removing Green Screens Much Easier</a></b><br>
                   PetaPixel<br>
                   July 2023
               </div>
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://www.cined.com/netflix-invents-new-green-screen-keying-method/"><img src="cined.webp" alt="Netflix Invents New Green Screen Keying Method" class="paper-thumbnail"></a>
+                  <a href="https://www.cined.com/netflix-invents-new-green-screen-keying-method/" target="_blank" rel="noopener"><img src="cined.webp" alt="Netflix Invents New Green Screen Keying Method" class="paper-thumbnail" width="1950" height="1300" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
-                  <b><a href="https://www.cined.com/netflix-invents-new-green-screen-keying-method/">Netflix Invents New Green Screen Keying Method</a></b><br>
+                  <b><a href="https://www.cined.com/netflix-invents-new-green-screen-keying-method/" target="_blank" rel="noopener">Netflix Invents New Green Screen Keying Method</a></b><br>
                   CineD<br>
                   July 2023
               </div>
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://www.fxguide.com/fxfeatured/the-art-and-craft-of-training-data-yes-training-data/"><img src="fxguide.webp" alt="The Art and Craft of Training Data. Yes, Training Data" class="paper-thumbnail"></a>
+                  <a href="https://www.fxguide.com/fxfeatured/the-art-and-craft-of-training-data-yes-training-data/" target="_blank" rel="noopener"><img src="fxguide.webp" alt="The Art and Craft of Training Data. Yes, Training Data" class="paper-thumbnail" width="1950" height="1300" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
-                  <b><a href="https://www.fxguide.com/fxfeatured/the-art-and-craft-of-training-data-yes-training-data/">The Art and Craft of Training Data. Yes, Training Data</a></b><br>
+                  <b><a href="https://www.fxguide.com/fxfeatured/the-art-and-craft-of-training-data-yes-training-data/" target="_blank" rel="noopener">The Art and Craft of Training Data. Yes, Training Data</a></b><br>
                   fxguide<br>
                   September 2023
               </div>
           </div>
       </main>
 
+    <script src="../assets/site.js"></script>
   </body>
 </html>

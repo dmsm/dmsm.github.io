@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <base target="_blank">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/style.css">
-    <link rel="stylesheet" href="../assets/paper.css">
+    <link rel="stylesheet" href="../assets/style.css?v=20260919">
+    <link rel="stylesheet" href="../assets/paper.css?v=20260919-2">
 
     <title>HodgeNet: Learning Spectral Geometry on Triangle Meshes</title>
     <meta name="description" content="Learning spectral geometry on triangle meshes with discrete exterior calculus. SIGGRAPH 2021 research by Dmitriy Smirnov and Justin Solomon.">
@@ -26,25 +25,24 @@
   </head>
   <body class="bg-light paper-page">
       <main class="container paper-container">
-          <a class="paper-back" href="../" target="_self">← Back to home</a>
           <header class="paper-header">
               <div>
                   <h1 class="paper-title">HodgeNet: Learning Spectral Geometry on Triangle Meshes</h1>
                   <div class="paper-authors">
                       <a class="paper-self" href="../" target="_self">Dmitriy Smirnov</a>
-                      <a href="https://people.csail.mit.edu/jsolomon/">Justin Solomon</a>
+                      <a href="https://people.csail.mit.edu/jsolomon/" target="_blank" rel="noopener">Justin Solomon</a>
                    </div>
                   <div class="paper-affiliations">
                       Massachusetts Institute of Technology
                   </div>
                   <div class="paper-venue">
-                      <a href="https://s2021.siggraph.org">SIGGRAPH 2021</a>
+                      <a href="https://s2021.siggraph.org" target="_blank" rel="noopener">SIGGRAPH 2021</a>
                   </div>
               </div>
           </header>
           <div class="row">
               <div class="col-12">
-                  <img src="im.png" alt="HodgeNet: Learning Spectral Geometry on Triangle Meshes" class="paper-figure img-fluid">
+                  <img src="im.png" alt="HodgeNet: Learning Spectral Geometry on Triangle Meshes" class="paper-figure img-fluid" width="2040" height="420" decoding="async">
               </div>
           </div>
           <div class="row">
@@ -61,7 +59,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center mb-2">
-                      <img src="pipeline.png" alt="Pipeline" class="rounded" style="width:80%;">
+                      <img src="pipeline.png" alt="Pipeline" class="rounded" style="width:80%;" width="2850" height="1648" decoding="async" loading="lazy">
                   </div>
                   <p class="paper-text">An overview of our HodgeNet architecture for learning from triangle meshes. The boxes highlighted in yellow have learnable parameters, while the remaining boxes are fixed computations. Given a triangle mesh as input, we use MLPs to learn per-vertex and per-edge local features, from which we construct the Hodge star operators. Together with a differential matrix, obtained from the mesh topology, we use these operators to assemble a Hodge
                   Laplacian. The eigenpairs of the Laplacian are then used to learn per-vertex, per-face, or per-mesh features suitable for the learning task at hand.</p>
@@ -75,7 +73,7 @@
           <div class="row justify-content-md-center">
               <div class="col-12">
                   <div class="embed-responsive embed-responsive-16by9">
-                      <iframe title="Research presentation video" width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/juP0PHxvnx8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe loading="lazy" title="Research presentation video" width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/juP0PHxvnx8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
               </div>
           </div>
@@ -86,17 +84,17 @@
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://dl.acm.org/doi/abs/10.1145/3450626.3459797"><img src="paper-thumb.png" alt="Paper" class="paper-thumbnail"></a>
+                  <a href="https://dl.acm.org/doi/abs/10.1145/3450626.3459797" target="_blank" rel="noopener"><img src="paper-thumb.png" alt="First page of HodgeNet: Learning Spectral Geometry on Triangle Meshes" class="paper-thumbnail paper-cover" width="1250" height="1624" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
                   <p>
                   D. Smirnov, J. Solomon<br>
                   <b>HodgeNet: Learning Spectral Geometry on Triangle Meshes</b><br>
                   SIGGRAPH 2021, virtual<br>
-                  <a href="https://dl.acm.org/doi/abs/10.1145/3450626.3459797">Paper</a> | <a href="#" data-placement="bottom"  data-popover-content="#deep-parametric-shapes-bib" data-toggle="popover">BibTeX</a>
+                  <a href="https://dl.acm.org/doi/abs/10.1145/3450626.3459797" target="_blank" rel="noopener">Paper</a> | <button type="button" class="link-button" data-placement="bottom"  data-popover-content="#hodgenet-bib" data-toggle="popover" aria-expanded="false">BibTeX</button>
                   </p>
               </div>
-              <div id="deep-parametric-shapes-bib" class="d-none">
+              <div id="hodgenet-bib" class="d-none">
                   <div class="popover-body">
                       <pre>@article{smirnov2021hodgenet,
   title={{HodgeNet}: Learning Spectral Geometry on Triangle Meshes},
@@ -115,9 +113,9 @@
           <div class="row">
               <div class="col-12">
                   <h2 class="paper-section-title">Code</h2>
-                  <a href="https://github.com/dmsm/HodgeNet">GitHub</a>
+                  <a href="https://github.com/dmsm/HodgeNet" target="_blank" rel="noopener">Code on GitHub</a>
                   <div class="mt-2">
-                  <a class="github-button" href="https://github.com/dmsm/HodgeNet" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/HodgeNet on GitHub">Star</a>
+                  <a class="github-button" href="https://github.com/dmsm/HodgeNet" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/HodgeNet on GitHub" target="_blank" rel="noopener">Star</a>
                   </div>
               </div>
           </div>
@@ -132,19 +130,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script>
-        $(function () {
-          $('[data-toggle="popover"]').click(function(e) {
-            e.preventDefault();
-          }).popover({
-              container : 'body',
-              html : true,
-              content: function() {
-              var content = $(this).attr("data-popover-content");
-              return $(content).children(".popover-body").html();
-              }
-          });
-    });
-    </script>
+    <script src="../assets/site.js"></script>
   </body>
 </html>

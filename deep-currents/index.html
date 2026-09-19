@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <base target="_blank">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/style.css">
-    <link rel="stylesheet" href="../assets/paper.css">
+    <link rel="stylesheet" href="../assets/style.css?v=20260919">
+    <link rel="stylesheet" href="../assets/paper.css?v=20260919-2">
 
     <title>DeepCurrents: Learning Implicit Representations of Shapes with Boundaries</title>
     <meta name="description" content="Learning implicit representations of shapes with boundaries using neural geometric currents. CVPR 2022 research by David Palmer, Dmitriy Smirnov, and collaborators.">
@@ -27,16 +26,15 @@
   </head>
   <body class="bg-light paper-page">
       <main class="container paper-container">
-          <a class="paper-back" href="../" target="_self">← Back to home</a>
           <header class="paper-header">
               <div>
                   <h1 class="paper-title">DeepCurrents: Learning Implicit Representations of Shapes with Boundaries</h1>
                   <div class="paper-authors">
-                      <a href="https://people.csail.mit.edu/drp/">David Palmer*<sup>1</sup></a>
+                      <a href="https://dpa1mer.github.io/" target="_blank" rel="noopener">David Palmer*<sup>1</sup></a>
                       <a class="paper-self" href="../" target="_self">Dmitriy Smirnov*<sup>1</sup></a>
-                      <a href="https://evastgh.github.io">Stephanie Wang<sup>2</sup></a>
-                      <a href="https://cseweb.ucsd.edu/~alchern/">Albert Chern<sup>2</sup></a>
-                      <a href="https://people.csail.mit.edu/jsolomon/">Justin Solomon<sup>1</sup></a>
+                      <a href="https://stephaniewang.page/" target="_blank" rel="noopener">Stephanie Wang<sup>2</sup></a>
+                      <a href="https://cseweb.ucsd.edu/~alchern/" target="_blank" rel="noopener">Albert Chern<sup>2</sup></a>
+                      <a href="https://people.csail.mit.edu/jsolomon/" target="_blank" rel="noopener">Justin Solomon<sup>1</sup></a>
                    </div>
                   <div class="paper-affiliations">
                       <span><sup>1</sup>Massachusetts Institute of Technology</span>
@@ -46,13 +44,13 @@
                       * denotes equal contribution.
                   </div>
                   <div class="paper-venue">
-                      <a href="http://cvpr2022.thecvf.com">CVPR 2022</a>
+                      <a href="https://cvpr2022.thecvf.com/" target="_blank" rel="noopener">CVPR 2022</a>
                   </div>
               </div>
           </header>
           <div class="row">
               <div class="col-12">
-                  <img src="im.png" alt="DeepCurrents: Learning Implicit Representations of Shapes with Boundaries" class="paper-figure img-fluid">
+                  <img src="im.png" alt="DeepCurrents: Learning Implicit Representations of Shapes with Boundaries" class="paper-figure img-fluid" width="1000" height="335" decoding="async">
               </div>
           </div>
           <div class="row">
@@ -69,13 +67,13 @@
           <div class="row">
               <div class="col-12 col-md-7">
                   <div class="text-center mb-2">
-                      <img src="2d.png" alt="Pipeline" class="rounded" style="width:80%;">
+                      <img src="2d.png" alt="Pipeline" class="rounded" style="width:80%;" width="800" height="586" decoding="async" loading="lazy">
                   </div>
                   <p class="paper-text">We learn a geometric current parameterized by a deep network \(f\). Minimizing the mass norm \(\|df + \alpha\|_1\) under the Euclidean metric in two dimensions yields a line segment connecting the two boundary points (b). With our custom data-dependent background metric, we can reconstruct the semicircle as a current (e). \(\alpha\) is shown as a vector field (a) and the custom metric is depicted by oriented ellipsoids (d, not to scale). Corresponding functions \(f\) are shown on the right (c and f).</p>
               </div>
               <div class="col-12 col-md-5">
                   <div class="text-center mb-2">
-                      <img src="architecture.png" alt="Architecture" class="rounded" style="width:100%;">
+                      <img src="architecture.png" alt="Architecture" class="rounded" style="width:100%;" width="2700" height="2260" decoding="async" loading="lazy">
                   </div>
                   <p class="paper-text">An overview of our network architectures for minimal surface optimization and single surface reconstruction (top) as well as shape space learning (bottom). An input point \(x\) is first encoded using random Fourier features. These features are then optionally concatenated with latent codes corresponding to shape identity and boundary and finally decoded to a scalar output.</p>
               </div>
@@ -92,15 +90,15 @@
           </div>
           <div class="row mb-2 text-center">
               <div class="col-12 col-sm-4 text-center">
-                  <img src="results/trefoil.gif" class="mb-2" alt="Trefoil Knot" style="width: 100%;">
+                  <img src="results/trefoil.gif" class="mb-2" alt="Trefoil Knot" style="width: 100%;" width="400" height="400" decoding="async" loading="lazy">
                   <p>Trefoil Knot</p>
               </div>
               <div class="col-12 col-sm-4 text-center">
-                  <img src="results/hopf.gif" class="mb-2" alt="Hopf Links" style="width: 100%;">
+                  <img src="results/hopf.gif" class="mb-2" alt="Hopf Links" style="width: 100%;" width="400" height="400" decoding="async" loading="lazy">
                   <p>Hopf Link</p>
               </div>
               <div class="col-12 col-sm-4 text-center">
-                  <img src="results/borromean.gif" class="mb-2" alt="Borromean Rings" style="width: 100%;">
+                  <img src="results/borromean.gif" class="mb-2" alt="Borromean Rings" style="width: 100%;" width="400" height="400" decoding="async" loading="lazy">
                   <p>Borromean Rings</p>
               </div>
           </div>
@@ -111,26 +109,26 @@
           </div>
           <div class="row mb-2 text-center">
               <div class="col-6 col-md-3 text-center">
-                  <img src="results/heads_latent.gif" class="mb-2" alt="Heads Latent Interpolation" style="width: 100%;">
+                  <img src="results/heads_latent.gif" class="mb-2" alt="Heads Latent Interpolation" style="width: 100%;" width="400" height="400" decoding="async" loading="lazy">
                   <p>Heads (latent)</p>
               </div>
               <div class="col-6 col-md-3 text-center">
-                  <img src="results/hands_latent.gif" class="mb-2" alt="Hands Latent Interpolation" style="width: 100%;">
+                  <img src="results/hands_latent.gif" class="mb-2" alt="Hands Latent Interpolation" style="width: 100%;" width="400" height="400" decoding="async" loading="lazy">
                   <p>Hands (latent)</p>
               </div>
               <div class="col-6 col-md-3 text-center">
-                  <img src="results/heads_bdry.gif" class="mb-2" alt="Heads Boundary Interpolation" style="width: 100%;">
+                  <img src="results/heads_bdry.gif" class="mb-2" alt="Heads Boundary Interpolation" style="width: 100%;" width="400" height="400" decoding="async" loading="lazy">
                   <p>Heads (boundary)</p>
               </div>
               <div class="col-6 col-md-3 text-center">
-                  <img src="results/hands_bdry.gif" class="mb-2" alt="Hands Boundary Interpolation" style="width: 100%;">
+                  <img src="results/hands_bdry.gif" class="mb-2" alt="Hands Boundary Interpolation" style="width: 100%;" width="400" height="400" decoding="async" loading="lazy">
                   <p>Hands (boundary)</p>
               </div>
           </div>
           <div class="row text-center">
               <div class="col-12 text-center">
                   <h3 class="paper-subtitle">Surface Reconstruction</h3>
-                  <img src="results/reconstruction.png" class="mb-2" alt="Surface Reconstruction" style="width: 100%;">
+                  <img src="results/reconstruction.png" class="mb-2" alt="Surface Reconstruction" style="width: 100%;" width="1200" height="650" decoding="async" loading="lazy">
               </div>
           </div>
           <div class="row">
@@ -141,7 +139,7 @@
           <div class="row justify-content-md-center">
               <div class="col-12">
                   <div class="embed-responsive embed-responsive-16by9">
-                      <iframe title="Research presentation video" width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/OhJC3rtzeoU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe loading="lazy" title="Research presentation video" width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/OhJC3rtzeoU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
               </div>
           </div>
@@ -152,14 +150,14 @@
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://arxiv.org/abs/2111.09383"><img src="paper-thumb.png" alt="Paper" class="paper-thumbnail"></a>
+                  <a href="https://arxiv.org/abs/2111.09383" target="_blank" rel="noopener"><img src="paper-thumb.png" alt="First page of DeepCurrents: Learning Implicit Representations of Shapes with Boundaries" class="paper-thumbnail paper-cover" width="1376" height="1788" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
                   <p>
                   D. Palmer*, D. Smirnov*, S. Wang, A. Chern, J. Solomon<br>
                   <b>DeepCurrents: Learning Implicit Representations of Shapes with Boundaries</b><br>
                   Conference on Computer Vision and Pattern Recognition (CVPR), 2022<br>
-                  <a href="https://arxiv.org/abs/2111.09383">arXiv</a> | <a href="#" data-placement="bottom"  data-popover-content="#deepcurrents-bib" data-toggle="popover">BibTeX</a>
+                  <a href="https://arxiv.org/abs/2111.09383" target="_blank" rel="noopener">arXiv</a> | <button type="button" class="link-button" data-placement="bottom"  data-popover-content="#deepcurrents-bib" data-toggle="popover" aria-expanded="false">BibTeX</button>
                   </p>
               </div>
               <div id="deepcurrents-bib" class="d-none">
@@ -176,9 +174,9 @@
           <div class="row">
               <div class="col-12">
                   <h2 class="paper-section-title">Code</h2>
-                  <a href="https://github.com/dmsm/DeepCurrents">GitHub</a>
+                  <a href="https://github.com/dmsm/DeepCurrents" target="_blank" rel="noopener">Code on GitHub</a>
                   <div class="mt-2">
-                  <a class="github-button" href="https://github.com/dmsm/DeepCurrents" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/DeepCurrents on GitHub">Star</a>
+                  <a class="github-button" href="https://github.com/dmsm/DeepCurrents" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/DeepCurrents on GitHub" target="_blank" rel="noopener">Star</a>
                   </div>
               </div>
           </div>
@@ -187,19 +185,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script>
-        $(function () {
-          $('[data-toggle="popover"]').click(function(e) {
-            e.preventDefault();
-          }).popover({
-              container : 'body',
-              html : true,
-              content: function() {
-              var content = $(this).attr("data-popover-content");
-              return $(content).children(".popover-body").html();
-              }
-          });
-    });
-    </script>
+    <script src="../assets/site.js"></script>
   </body>
 </html>

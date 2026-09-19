@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <base target="_blank">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/style.css">
-    <link rel="stylesheet" href="../assets/paper.css">
+    <link rel="stylesheet" href="../assets/style.css?v=20260919">
+    <link rel="stylesheet" href="../assets/paper.css?v=20260919-2">
 
     <title>Deep Parametric Shape Predictions using Distance Fields</title>
     <meta name="description" content="Learning parametric curves and surfaces from distance fields for shape prediction and abstraction. CVPR 2020 research by Dmitriy Smirnov and collaborators.">
@@ -26,29 +25,28 @@
   </head>
   <body class="bg-light paper-page">
       <main class="container paper-container">
-          <a class="paper-back" href="../" target="_self">← Back to home</a>
           <header class="paper-header">
               <div>
                   <h1 class="paper-title">Deep Parametric Shape Predictions using Distance Fields</h1>
                   <div class="paper-authors">
                       <a class="paper-self" href="../" target="_self">Dmitriy Smirnov<sup>1</sup></a>
-                      <a href="https://techmatt.github.io">Matthew Fisher<sup>2</sup></a>
-                      <a href="http://www.vovakim.com">Vladimir G. Kim<sup>2</sup></a>
-                      <a href="https://richzhang.github.io">Richard Zhang<sup>2</sup></a>
-                      <a href="https://people.csail.mit.edu/jsolomon/">Justin Solomon<sup>1</sup></a>
+                      <a href="https://techmatt.github.io" target="_blank" rel="noopener">Matthew Fisher<sup>2</sup></a>
+                      <a href="https://vovakim.com/" target="_blank" rel="noopener">Vladimir G. Kim<sup>2</sup></a>
+                      <a href="https://richzhang.github.io" target="_blank" rel="noopener">Richard Zhang<sup>2</sup></a>
+                      <a href="https://people.csail.mit.edu/jsolomon/" target="_blank" rel="noopener">Justin Solomon<sup>1</sup></a>
                    </div>
                   <div class="paper-affiliations">
                       <span><sup>1</sup>Massachusetts Institute of Technology</span>
                       <span><sup>2</sup>Adobe Research</span>
                   </div>
                   <div class="paper-venue">
-                      <a href="http://cvpr2020.thecvf.com">CVPR 2020</a>
+                      <a href="https://cvpr2020.thecvf.com/" target="_blank" rel="noopener">CVPR 2020</a>
                   </div>
               </div>
           </header>
           <div class="row">
               <div class="col-12">
-                  <img src="im.png" alt="Deep Parametric Shape Predictions using Distance Fields" class="paper-figure img-fluid">
+                  <img src="im.png" alt="Deep Parametric Shape Predictions using Distance Fields" class="paper-figure img-fluid" width="1000" height="335" decoding="async">
               </div>
           </div>
           <div class="row">
@@ -64,7 +62,7 @@
           </div>
           <div class="row">
               <div class="col-12 col-md-7">
-                  <img src="chamfer.png" alt="Comparison to Chamfer distance" class="rounded img-fluid">
+                  <img src="chamfer.png" alt="Comparison to Chamfer distance" class="rounded img-fluid" width="960" height="294" decoding="async" loading="lazy">
               </div>
               <div class="col-12 col-md-5">
                   <p class="paper-text">Drawbacks of Chamfer distance (above) are fixed by our losses (below). On the left, sampling uniformly in the parameter space of a Bézier curve (orange) yields oversampling at the high-curvature area, resulting in a low Chamfer distance to the segments (blue). Our method yields a spatially uniform representation. On the right, two sets of nearly-orthogonal line segments have near-zero Chamfer distance despite misaligned normals. We explicitly measure normal alignment.</p>
@@ -73,7 +71,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center mb-2">
-                      <img src="pipeline.png" alt="Pipeline" class="rounded" style="width:80%;">
+                      <img src="pipeline.png" alt="Pipeline" class="rounded" style="width:80%;" width="970" height="360" decoding="async" loading="lazy">
                   </div>
                   <p class="paper-text">Our font vectorization pipeline is illustrated in green, and our 3D shape abstraction pipeline is in orange. </p>
               </div>
@@ -86,7 +84,7 @@
           <div class="row justify-content-md-center">
               <div class="col-12">
                   <div class="embed-responsive embed-responsive-16by9">
-                      <iframe title="Research presentation video" width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/v_0UrjbTtHg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe loading="lazy" title="Research presentation video" width="800" height="450" style="border: 0;" src="https://www.youtube.com/embed/v_0UrjbTtHg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
               </div>
           </div>
@@ -97,14 +95,14 @@
           </div>
           <div class="paper-resource">
               <div class="paper-resource-image">
-                  <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Smirnov_Deep_Parametric_Shape_Predictions_Using_Distance_Fields_CVPR_2020_paper.pdf"><img src="paper-thumb.png" alt="Paper" class="paper-thumbnail"></a>
+                  <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Smirnov_Deep_Parametric_Shape_Predictions_Using_Distance_Fields_CVPR_2020_paper.pdf" target="_blank" rel="noopener"><img src="paper-thumb.png" alt="First page of Deep Parametric Shape Predictions using Distance Fields" class="paper-thumbnail paper-cover" width="1250" height="1622" decoding="async" loading="lazy"></a>
               </div>
               <div class="paper-resource-body">
                   <p>
                   D. Smirnov, M. Fisher, V. G. Kim, R. Zhang, J. Solomon<br>
                   <b>Deep Parametric Shape Predictions using Distance Fields</b><br>
                   Conference on Computer Vision and Pattern Recognition (CVPR) 2020, virtual<br>
-                  <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Smirnov_Deep_Parametric_Shape_Predictions_Using_Distance_Fields_CVPR_2020_paper.pdf">Paper</a> | <a href="#" data-placement="bottom"  data-popover-content="#deep-parametric-shapes-bib" data-toggle="popover">BibTeX</a>
+                  <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Smirnov_Deep_Parametric_Shape_Predictions_Using_Distance_Fields_CVPR_2020_paper.pdf" target="_blank" rel="noopener">Paper</a> | <button type="button" class="link-button" data-placement="bottom"  data-popover-content="#deep-parametric-shapes-bib" data-toggle="popover" aria-expanded="false">BibTeX</button>
                   </p>
               </div>
               <div id="deep-parametric-shapes-bib" class="d-none">
@@ -122,19 +120,19 @@
               <div class="col-12">
                   <h2 class="paper-section-title">Poster</h2>
                   <div class="text-center">
+                      <p class="mb-3"><a href="poster.pdf" target="_blank" rel="noopener">View poster (PDF, 6.3 MB)</a></p>
                       <div>
-                          <iframe class="paper-poster" title="Research poster" src="poster.pdf" height="700" style="width:100%;"></iframe>
+                          <iframe loading="lazy" class="paper-poster" title="Research poster" src="poster.pdf" height="700" style="width:100%;"></iframe>
                       </div>
-                      <a href="poster.pdf">pdf</a> [6M]
                   </div>
               </div>
           </div>
           <div class="row">
               <div class="col-12">
                   <h2 class="paper-section-title">Code, models, and data</h2>
-                  <a href="https://github.com/dmsm/DeepParametricShapes">GitHub</a>
+                  <a href="https://github.com/dmsm/DeepParametricShapes" target="_blank" rel="noopener">Code on GitHub</a>
                   <div class="mt-2">
-                    <a class="github-button" href="https://github.com/dmsm/DeepParametricShapes" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/DeepParametricShapes on GitHub">Star</a>
+                    <a class="github-button" href="https://github.com/dmsm/DeepParametricShapes" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dmsm/DeepParametricShapes on GitHub" target="_blank" rel="noopener">Star</a>
                   </div>
               </div>
           </div>
@@ -149,19 +147,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script>
-        $(function () {
-          $('[data-toggle="popover"]').click(function(e) {
-            e.preventDefault();
-          }).popover({
-              container : 'body',
-              html : true,
-              content: function() {
-              var content = $(this).attr("data-popover-content");
-              return $(content).children(".popover-body").html();
-              }
-          });
-    });
-    </script>
+    <script src="../assets/site.js"></script>
   </body>
 </html>
